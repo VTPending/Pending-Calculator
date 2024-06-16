@@ -123,8 +123,11 @@ math_request = 0
 new_num_check = False
 formatted_value = f"{temp_value:,}"
 
-photo = PhotoImage(file="PenCookie.png")
-main_window.iconphoto(True,photo)
+try:
+    photo = PhotoImage(file="PenCookie.png")
+    main_window.iconphoto(True, photo)
+except Exception as e:
+    print(f"Error loading image: {e}")
 
 main_window.geometry("440x575")
 main_window.resizable(False, False)
